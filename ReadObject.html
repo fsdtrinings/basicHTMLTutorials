@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function doMyWork()
+        {
+            var x = document.getElementById('techName01').value;
+           
+            if(x == 'angular 10')
+            {
+                alert('it is front end tech');
+            }
+            else if(x == 'Spring REST')
+            {
+                alert('it is for back end business logic');
+            }
+            else
+            {
+                document.getElementById('errorMsg01').innerHTML = "Not Registered Technology With Us";
+            }
+            
+        }
+
+    </script>
+</head>
+<body>
+        Enter Technology Name 
+        <input type="text" id="techName01" />
+        <input type="button"
+               value="Click Me"
+               onclick="doMyWork()"/>
+        <p id="errorMsg01" style="color: red;font-size: 10;font-style: italic;">
+        
+        </p>
+</body>
+</html>
