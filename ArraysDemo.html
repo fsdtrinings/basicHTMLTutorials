@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        
+        function doArraysThings()
+        {
+            var arr = new Array; // declaration of new array through Array object
+            arr[0] = 'Java';
+            arr[1] = 'Spring';
+            arr[2] = 'JSF';
+            arr[3] = 'Salesforce';
+            arr[4] = 'Angular';
+
+            console.log(arr);
+
+            arr.forEach(ele => console.log(ele));
+         
+            arr.sort();
+            console.log(arr);
+
+            // --- creating 2nd array ----
+            var arr2 = new Array;
+            arr2[0] = 101;
+            arr2[1] = 201;
+            arr2[2] = 301;
+            
+            var arr3 = arr2.concat(arr);
+            console.log("New Long Arrays arr3 is ");
+            console.log(arr3);
+
+            arr2[3] = 401;
+            console.log(arr3);
+
+            // ----- array insertion & deletion methods
+
+            arr3.push('React JS'); // insert last 
+            console.log(arr3);
+            
+            arr3.pop(); // removes from last
+            console.log(arr3);
+
+            arr3.shift(); // removes from first position
+            console.log(arr3);
+            
+            arr3.unshift("India");
+            console.log(arr3);
+
+
+            var x = arr3.includes('JSF');
+            console.log(x);
+        }
+
+        doArraysThings();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

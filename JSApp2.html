@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+       function doThings()
+       {
+            console.log("Application 2 Dialog box ");
+
+            var countryName = 'India';
+            alert('Country name is '+countryName);
+
+            countryName = prompt("Pls. Enter Your Country Name ");
+            alert('New Country name is '+countryName);
+
+            var isEntered = confirm("Is "+countryName+"  Allowed");
+            if(isEntered == true)
+            {
+                alert(countryName+" Allowed");
+            }
+            else{
+                alert("Rejected");
+            }
+
+       }
+       
+   </script>
+</head>
+<body onload="doThings()">
+    
+</body>
+</html>
