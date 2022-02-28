@@ -1,0 +1,18 @@
+h1{
+    color: chocolate;
+    font-style: italic;
+    font-size: large;
+}
+
+.sideBar
+{
+    background-color: blanchedalmond;
+     width: 20%;
+     height: 700px;
+}
+
+.mainArea{
+    background-color: pink;
+     width: 80%;
+     height: 700px;
+}
