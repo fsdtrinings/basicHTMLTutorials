@@ -1,0 +1,106 @@
+HTML component 
+---------------------
+
+<form #userForm="ngForm" (ngSubmit)="doRegistration()">
+   <table>
+    <tr>
+      <td> Enter username </td>
+      <td>
+         <input type="text" [(ngModel)]="userObj.username"  #username="ngModel" id="un101" name="un" required />
+      </td>
+      <td> 
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <p class="error"> Username cannot be left blank</p> 
+       </div>
+      </td>
+    </tr>
+    <tr>
+      <td> Password </td>
+      <td> <input type="text" [(ngModel)]="userObj.password" #password="ngModel" id="pass101" name="pass"/> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> age </td>
+      <td> <input type="text" [(ngModel)]="userObj.age" #age="ngModel" id="age101" name="ageName"/> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> email </td>
+      <td> <input type="text" [(ngModel)]="userObj.email" #email="ngModel" id="email101" name="emailName"/> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> phone </td>
+      <td> <input type="text" [(ngModel)]="userObj.phone" #phone="ngModel" id="phone101" name="phone" pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required/> </td>
+      <td> 
+
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error">
+          <p>Wrong Phone Number</p>
+        </div>
+     
+
+      </td>
+    </tr>
+    <tr>
+      <td>  </td>
+      <td>
+         <button type="submit" [disabled]="userForm.form.invalid">
+          Register  
+        </button>
+
+      </td>
+      <td> </td>
+    </tr>
+    
+
+   </table>
+</form>
++
+
+Create Object in ts file 
+----------------------------------
+export class AppComponent {
+  title = 'TemplateApp';
+  userObj:Users = new Users('','',0,0,'');
+
+  doRegistration()
+  {
+      alert(this.userObj.username+' '+this.userObj.age);
+      console.log(this.userObj)
+  }
+}
+and 
+
+Create Business object 
+---------------------------------
+export class Users {
+    username:string;
+    password:string;
+    age:number;
+    phone:number;
+    email:string;
+
++ 
+
+Changes in Module File 
+-----------------------
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+   
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
