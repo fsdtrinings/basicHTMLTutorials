@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function doThings()
+        {
+            var stateInfo = '';
+            console.log("inside doThings() ");
+            var stateName = document.getElementById('st1').value;
+            console.log(stateName);
+            if(stateName == 'Karnataka')
+            {
+                stateInfo = stateName+" is south indian state , capital :- Banglore";
+            }
+            else if(stateName == 'Delhi')
+            {
+                stateInfo = stateName+" is North indian state , its a country capital";
+            }
+            else{
+                stateInfo = stateName+" not registered ";
+            }
+           
+            var outputArea = document.getElementById('st2');
+            
+            outputArea.innerHTML = stateInfo;
+            
+        }
+        function printToolTip()
+        {
+            alert("Enter Indian State Name");
+        }
+
+        function doBlurThings(control)
+        {
+                var lableInfo = control.value;
+                console.log("inside doBlur event handler code :- "+lableInfo);
+        }
+    </script>
+</head>
+<body>
+        Enter the name of state 
+        <input type="text" id="st1"/>
+        
+        <input type="button" value="Show Details"  onclick="doThings()"/>
+        <hr/>
+        <p id="st2">
+               
+        </p>
+        <input type="text" value="Java" onblur="doBlurThings(this)">
+        <input type="button" value="test button" onblur="doBlurThings(this)">
+        <input type="text" value="Banking App" onblur="doBlurThings(this)">
+        
+        
+        
+</body>
+</html>
