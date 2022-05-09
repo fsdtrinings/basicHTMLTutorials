@@ -1,0 +1,60 @@
+import { Injectable } from '@angular/core';
+import { Employee } from './employee';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EmployeeService {
+
+  employeeArr:Employee[] = [];
+
+  constructor() {
+
+    let e1:Employee = {
+      employeeName : 'Ramesh',
+      employeeId: 101,
+      technicalSkill : 'Angular',
+      emailId : 'ramesh@gmail.com',
+      salary : 4545
+    }
+    let e2:Employee = {
+      employeeName : 'Anil',
+      employeeId: 102,
+      technicalSkill : 'Angular',
+      emailId : 'ramesh@gmail.com',
+      salary : 4545
+    }
+
+    this.employeeArr.push(e1);
+    this.employeeArr.push(e2);
+    
+
+
+   }
+
+
+  addEmployee(e:Employee)
+  {
+     // code to add employee in array
+     this.employeeArr.push(e);
+     console.log("inside employee Service add employee "+this.employeeArr.length);
+     // code to call java spring endpoints
+  }
+
+  getAllEmployee():Employee[]
+  {
+    console.log("inside employee Service get All employee "+this.employeeArr.length);
+    return this.employeeArr;
+  }
+
+  getEmployeeBasedOnId(searchid:number):Employee|null
+  {
+
+    
+   
+    return null;
+  }
+
+
+
+}
